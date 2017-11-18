@@ -10,7 +10,7 @@ if (!isset($_SESSION["admin"])) {
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Mobil</title>
+    <title>Admin Ramanda Motor</title>
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
     <script src="../assets/js/jquery.min.js"></script>
     <!-- Optional, Add fancyBox for media, buttons, thumbs -->
@@ -33,7 +33,7 @@ if (!isset($_SESSION["admin"])) {
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="#">ADMIN | RENTAL MOBIL CALYSTA</a>
+                    <a class="navbar-brand" href="#">ADMIN | RENTAL MOBIL RAMANDA MOTOR</a>
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">

@@ -1,12 +1,12 @@
 <div class="page-header">
-	<h2>Monggo</small></h2>
+	<h2>Daftar Mobil</small></h2>
 </div>
 <div class="row">
 	<?php $query = $connection->query("SELECT * FROM mobil JOIN jenis USING(id_jenis)"); while ($row = $query->fetch_assoc()): ?>
-		<div class="col-xs-6 col-md-3">
+		<div class="col-xs-6 col-md-6">
 			<div class="thumbnail">
 				<a href="assets/img/mobil/<?=$row['gambar']?>" class="fancybox">
-				<img src="assets/img/mobil/<?=$row['gambar']?>" style="height:250px; width:100%" alt="<?=$row['judul']?>">
+				<img class="img-responsive" src="assets/img/mobil/<?=$row['gambar']?>" style="height:250px; width:100%" alt="<?=$row['judul']?>">
 			</a>
 	      <div class="caption text-center">
 	        <h4><?=$row["nama_mobil"]?></h4>
