@@ -1,8 +1,18 @@
 <form class="form-inline hidden-print" action="<?=$_SERVER["REQUEST_URI"]?>" method="post">
 		<label>Periode</label>
-		<input type="text" class="form-control" name="start">
-		<label>s/d</label>
-		<input type="text" class="form-control" name="stop">
+	    <div class="input-group date datepicker" data-provide="datepicker" data-date-format="yyyy-mm-dd">
+	        <input type="text" class="form-control" name="start">
+	        <div class="input-group-addon">
+	            <span class="glyphicon glyphicon-th"></span>
+	        </div>
+	    </div>
+	    <label>s/d</label>
+	    <div class="input-group date datepicker" data-provide="datepicker" data-date-format="yyyy-mm-dd">
+	        <input type="text" class="form-control" name="stop">
+	        <div class="input-group-addon">
+	            <span class="glyphicon glyphicon-th"></span>
+	        </div>
+	    </div>
 		<button type="submit" class="btn btn-primary btn-sm">Tampilkan</button>
 	</form>
 	<br>
@@ -30,8 +40,8 @@
 											<tr>
 													<td><?=$no++?></td>
 													<td><?=$row['nama']?></td>
-													<td><?=date("d-m-Y H:i:s", strtotime($row['tgl_ambil']))?></td>
-													<td><?=date("d-m-Y H:i:s", strtotime($row['tgl_kembali']))?></td>
+													<td><?=date("Y-m-d", strtotime($row['tgl_ambil']))?></td>
+													<td><?=date("Y-m-d", strtotime($row['tgl_kembali']))?></td>
 													<td><?=$row['terlambat']?> jam</td>
 													<td>Rp.<?=number_format($row['total_harga'])?>,-</td>
 													<td>Rp.<?=number_format($row['denda'])?>,-</td>

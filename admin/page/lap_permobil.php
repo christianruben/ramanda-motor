@@ -7,11 +7,21 @@
 			<?php endwhile; ?>
 		</select>
     <label>Tgl :</label>
-    <input type="text" class="form-control" name="start">
+    <div class="input-group date datepicker" data-provide="datepicker" data-date-format="yyyy-mm-dd">
+        <input type="text" class="form-control" name="start">
+        <div class="input-group-addon">
+            <span class="glyphicon glyphicon-th"></span>
+        </div>
+    </div>
     <label>s/d</label>
-    <input type="text" class="form-control" name="stop">
-		<button type="submit" class="btn btn-primary">Tampilkan</button>
-	</form>
+    <div class="input-group date datepicker" data-provide="datepicker" data-date-format="yyyy-mm-dd">
+        <input type="text" class="form-control" name="stop">
+        <div class="input-group-addon">
+            <span class="glyphicon glyphicon-th"></span>
+        </div>
+    </div>
+	<button type="submit" class="btn btn-primary">Tampilkan</button>
+</form>
 	<br>
 	<?php if ($_POST): ?>
 	  <div class="panel panel-info">

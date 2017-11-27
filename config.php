@@ -52,7 +52,7 @@ while ($data = $query->fetch_assoc()) {
     $connection->query("UPDATE mobil SET status='0' WHERE id_mobil=$data[id_mobil]");
     $q = $connection->query("SELECT id_supir FROM detail_transaksi WHERE id_transaksi=$data[id_transaksi]");
     if ($q->num_rows) {
-      $connection->query("UPDATE supir SET status='0' WHERE id_supir=$data[id_supir]");
+      @$connection->query("UPDATE supir SET status='0' WHERE id_supir=".$id["id_supir"]);
     }
   }
 }

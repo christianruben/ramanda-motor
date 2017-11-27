@@ -9,7 +9,9 @@ require_once "config.php";
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>APLIKASI SEWA MOBIL RAMANDA MOTOR</title>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap-datepicker.min.css">
     <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap-datepicker.min.js"></script>
     <!-- Optional, Add fancyBox for media, buttons, thumbs -->
     <link rel="stylesheet" href="assets/fancybox/source/jquery.fancybox.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="assets/fancybox/source/helpers/jquery.fancybox-buttons.css" type="text/css" media="screen" />
