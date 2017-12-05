@@ -93,3 +93,29 @@ while ($a = $query->fetch_assoc()) { //
       }
   }
 }
+
+function getUserFromID($id){
+  global $connection;
+  $sql = "SELECT * FROM pelanggan WHERE id_pelanggan = $id LIMIT 1";
+  $query = $connection->query($sql);
+  $row = $query->fetch_assoc();
+  return $row;
+}
+
+function getDataMobilFromID($id){
+  global $connection;
+  $sql = "SELECT * FROM mobil JOIN jenis USING(id_jenis) WHERE id_mobil = $id";
+  $query = $connection->query($sql);
+  $row = $query->fetch_assoc();
+  return $row;
+}
+
+function getTotalTransaksi($id){
+  global $connection;
+  $sql = "SELECT count(*) as total FROM transaksi WHERE id_mobil = $id";
+  $query = $connection->query($sql);
+  $row = $query->fetch_assoc();
+  return $row;
+}
+
+$url = "http://localhost/ramanda-motor/";

@@ -6,7 +6,7 @@
 		<div class="col-xs-6 col-md-6">
 			<div class="thumbnail">
 				<a href="assets/img/mobil/<?=$row['gambar']?>" class="fancybox">
-				<img class="img-responsive" src="assets/img/mobil/<?=$row['gambar']?>" style="height:250px; width:100%" alt="<?=$row['judul']?>">
+				<img class="img-responsive" src="<?= $url ?>assets/img/mobil/<?=$row['gambar']?>" style="height:250px; width:100%" alt="<?=$row['nama_mobil']?>">
 			</a>
 	      <div class="caption text-center">
 	        <h4><?=$row["nama_mobil"]?></h4>
