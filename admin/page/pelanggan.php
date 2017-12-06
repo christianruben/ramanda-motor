@@ -1,5 +1,6 @@
 <?php
 $update = (isset($_GET['action']) AND $_GET['action'] == 'update') ? true : false;
+$row = "";
 if ($update) {
 	$sql = $connection->query("SELECT * FROM pelanggan WHERE id_pelanggan='$_GET[key]'");
 	$row = $sql->fetch_assoc();
@@ -27,9 +28,9 @@ if (isset($_GET['action']) AND $_GET['action'] == 'delete') {
 	echo alert("Berhasil!", "?page=pelanggan");
 }
 ?>
+<?php if(count($row) > 0 || $row == ""){ ?>
 <div class="row">
 <div class="col-md-4 hidden-print">
-	
 	    <div class="panel panel-<?= ($update) ? "warning" : "info" ?>">
 	        <div class="panel-heading"><h3 class="text-center"><?= ($update) ? "EDIT" : "TAMBAH" ?></h3></div>
 	        <div class="panel-body">
@@ -73,6 +74,13 @@ if (isset($_GET['action']) AND $_GET['action'] == 'delete') {
 	        </div>
 	    </div>
 	</div>
+<?php }else{ ?>
+	<div class="col-md-4 hidden-print">
+	<div class="panel panel-danger">
+			<center>Pelanggan tidak dapat ditemukan</center>
+			</div>
+	</div>
+<?php } ?>
 	<div class="col-md-8">
 	    <div class="panel panel-info">
 	        <div class="panel-heading"><h3 class="text-center">DAFTAR PELANGGAN</h3></div>

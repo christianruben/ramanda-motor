@@ -5,7 +5,7 @@
 	<?php $query = $connection->query("SELECT * FROM mobil JOIN jenis USING(id_jenis)"); while ($row = $query->fetch_assoc()): ?>
 		<div class="col-xs-6 col-md-6">
 			<div class="thumbnail">
-				<a href="assets/img/mobil/<?=$row['gambar']?>" class="fancybox">
+				<a href="<?=$row['gambar'] == "" ? "#" : $url."assets/img/mobil/".$row['gambar'] ?>" class="fancybox">
 				<img class="img-responsive" src="<?=$url?>assets/img/mobil/<?=$row['gambar']?>" style="height:250px; width:100%" alt="<?=$row['nama_mobil']?>">
 			</a>
 	      <div class="caption text-center">
@@ -17,7 +17,7 @@
 	        <p>
 	        	<h4>Total: <?=getTotalTransaksi($row['id_mobil'])['total']?> Transaksi</h4>
 				<br>
-				<a href="<?=($row['status']) ? "?page=transaksi&id=$row[id_mobil]" : "#" ?>" style="display: <?=($row['status']) ?: "none" ?>" class="btn btn-primary">Edit Mobil</a>
+				<a href="<?=($row['status']) ? "?page=mobil&action=update&key=$row[id_mobil]" : "#" ?>" style="display: <?=($row['status']) ?: "none" ?>" class="btn btn-primary">Edit Mobil</a>
 			</p>
 	      </div>
 	    </div>

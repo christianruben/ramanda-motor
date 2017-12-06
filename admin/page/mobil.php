@@ -1,5 +1,6 @@
 <?php
 $update = (isset($_GET['action']) AND $_GET['action'] == 'update') ? true : false;
+$row = "";
 if ($update) {
 	$sql = $connection->query("SELECT * FROM mobil WHERE id_mobil='$_GET[key]'");
 	$row = $sql->fetch_assoc();
@@ -49,6 +50,7 @@ if (isset($_GET['action']) AND $_GET['action'] == 'delete') {
 	echo alert("Berhasil!", "?page=mobil");
 }
 ?>
+<?php if(count($row) > 0 || $row == ""){ ?>
 <div class="row">
 	<div class="col-md-4 hidden-print">
 	    <div class="panel panel-<?= ($update) ? "warning" : "info" ?>">
@@ -103,6 +105,13 @@ if (isset($_GET['action']) AND $_GET['action'] == 'delete') {
 	        </div>
 	    </div>
 	</div>
+<?php }else{ ?>
+	<div class="col-md-4 hidden-print">
+	<div class="panel panel-danger">
+			<center>Mobil tidak dapat ditemukan</center>
+			</div>
+	</div>
+<?php } ?>
 	<div class="col-md-8">
 	    <div class="panel panel-info">
 	        <div class="panel-heading"><h3 class="text-center">DAFTAR MOBIL</h3></div>
@@ -134,7 +143,7 @@ if (isset($_GET['action']) AND $_GET['action'] == 'delete') {
 															<td><span class="label label-<?=($row['status']) ? "success" : "danger" ?>"><?=($row['status']) ? "Tersedia" : "Tidak Tersedia" ?></span></td>
 	                            <td class="hidden-print">
 	                                <div class="btn-group">
-	                                    <a href="../assets/img/mobil/<?=$row['gambar']?>" class="btn btn-info btn-xs fancybox">Lihat</a>
+	                                    <a href="<?= $row['gambar'] == "" ? "#" : "../assets/img/mobil/".$row['gambar'] ?>" class="btn btn-info btn-xs fancybox">Lihat</a>
 	                                    <a href="?page=mobil&action=update&key=<?=$row['id_mobil']?>" class="btn btn-warning btn-xs">Edit</a>
 	                                    <a href="?page=mobil&action=delete&key=<?=$row['id_mobil']?>" class="btn btn-danger btn-xs">Hapus</a>
 	                                </div>

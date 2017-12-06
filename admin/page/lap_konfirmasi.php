@@ -8,7 +8,7 @@
     </div>
     <label>s/d</label>
     <div class="input-group date datepicker" data-provide="datepicker" data-date-format="yyyy-mm-dd">
-        <input type="text" class="form-control" name="stop">
+        <input type="text" id="dateinput" class="form-control" name="stop">
         <div class="input-group-addon">
             <span class="glyphicon glyphicon-th"></span>
         </div>

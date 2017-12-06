@@ -70,7 +70,7 @@ if (!isset($_SESSION["admin"])) {
         </nav>
         <div class="row">
             <div class="col-md-12">
-              <?php include adminPage($_ADMINPAGE); ?>
+              <?php require_once adminPage($_ADMINPAGE); ?>
             </div>
         </div>
     </div>
@@ -79,7 +79,7 @@ if (!isset($_SESSION["admin"])) {
         $('.datepicker').datepicker({
             startDate: '-3d',
             todayHighlight: true,
-            autoclose: true
+            autoclose: true,
         });        
     </script>
 </body>
